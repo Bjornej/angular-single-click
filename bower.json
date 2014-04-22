@@ -1,0 +1,22 @@
+{
+  "name": "angular-single-click",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Bjornej/angular-single-click",
+  "authors": [
+    "Paolo Nicodemo <paolonicodemo@gmail.com>"
+  ],
+  "description": "Angular directive to prevent double clicks",
+  "main": "dist/angular-single-click",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.2.16"
+  }
+}
