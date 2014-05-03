@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+        <script type="text/javascript" src="../single-click.js"></script>
+        <script type="text/javascript">
+            function TestController($scope, $q, $timeout) {
+                $scope.data = {
+                    time: 5,
+                    messages: []
+                };
+
+
+
+                $scope.wait = function () {
+                    var deferred = $q.defer();
+
+                    $timeout(function () {
+                        debugger;
+                        $scope.data.messages.push({ text: "Clicked the button" })
+                        deferred.resolve();
+
+                    }, $scope.data.time * 1000);
+
+                    return deferred.promise;
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <div ng-controller="TestController">
+            Time to execute in seconds <input ng-model="data.time" />
+            <br />
+            <button ng-single-click="wait()">Click</button>
+
+
+             Messages :
+            <ul ng-repeat="message in data.messages">
+                <li>{{message.text}}</li>
+            </ul>
+
+        </div>
+
+
+
+    </body>
+</html>
